@@ -13,7 +13,9 @@ Le projet se subdivise en plusieurs classes contenues dans des fichiers distinct
 
 le projet Morpion est conçu pour jouer à 2 joueurs.
 Entrez le nom de chacun des joueurs au debut du jeu.
-L'ordre de passage et le choix des tokens (O ou X) sont attribués par défaut
+L'ordre de passage et le choix des tokens (O ou X) sont attribués par défaut.
 Alignez 3 tokens pour obtenir la victoire.
 
 Enjoy !
+
+PS : ce projet a été réalisé en "God mode" !
