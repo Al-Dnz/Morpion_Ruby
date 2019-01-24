@@ -56,62 +56,61 @@ class Controller
   end
 
   def empty_game
-    @view.empty_board
+    @view.matrice =  [ [" "," "," "] , [" "," "," "] , [" "," "," "] ]
     @played_cases =[]
   end
 
   def play
     state = 0
-
-
+    empty_game
     while true
       if state == 0
           puts "C'est à #{@player0.name} de jouer (jeton #{@player0.token})"
           puts "Quelle case veux tu cocher #{@player0.name} ?"
           n = gets.chomp.upcase
 
-          until (not_played?(n)==true) && (case_authorization?(n)==true)
+          until not_played?(n) && case_authorization?(n)
             n = gets.chomp.upcase
           end
           @played_cases << n
           @view.play("player0",n)
 
-         if @view.iswinX? == true
-           puts " #{@player0.name} a gagné "
-           empty_game
+         if @view.iswin?(@player0.token)
+           puts "#{@player0.name} a gagné."
+           puts "FÉLICITATIONS #{@player0.name}!"
+           puts" "
+           @player0.score += 1
            break
-         elsif isfull? == true
+         elsif isfull?
            puts "Match nul !"
-           empty_game
            break
          else
            state = 1 - state
          end
-
       else
           puts "C'est à #{@player1.name} de jouer (jeton #{@player1.token})"
           puts "Quelle case veux tu cocher #{@player1.name} ?"
           n = gets.chomp.upcase
 
-          until (not_played?(n)==true) && (case_authorization?(n)==true)
+          until not_played?(n) && case_authorization?(n)
             n = gets.chomp.upcase
           end
 
           @played_cases << n
           @view.play("player1",n)
 
-          if @view.iswinO? == true
-            puts "#{@player1.name} a gagné "
-            empty_game
+          if @view.iswin?(@player1.token)
+            puts "#{@player1.name} a gagné."
+            puts "FÉLICITATIONS #{@player1.name}!"
+            puts" "
+            @player1.score += 1
             break
-          elsif isfull? == true
+          elsif isfull?
             puts "Match nul !"
-            empty_game
             break
           else
            state = 1 - state
           end
-
        end
      end
 

@@ -128,6 +128,15 @@ end
 #   end
 #  end
 
+# def iswinO?
+#   # CONDITION DE VICTOIRE DE O
+#   if (@matrice[0][0] == @matrice[0][1] && @matrice[0][1] == @matrice[0][2] && @matrice[0][0] == "O") || (@matrice[1][0] == @matrice[1][1] && @matrice[1][1] == @matrice[1][2] && @matrice[1][0] == "O") || (@matrice[2][0] == @matrice[2][1] && @matrice[2][1] == @matrice[2][2] && @matrice[2][0] == "O") || (@matrice[0][0] == @matrice[1][0] && @matrice[1][0] == @matrice[2][0] && @matrice[0][0] == "O") || (@matrice[0][1] == @matrice[1][1] && @matrice[1][1] == @matrice[2][1] && @matrice[0][1] == "O") || (@matrice[0][2] == @matrice[1][2] && @matrice[1][2] == @matrice[2][2] && @matrice[0][2] == "O") || (@matrice[0][0] == @matrice[1][1] && @matrice[1][1] == @matrice[2][2] && @matrice[0][0] == "O") || (@matrice[0][2] == @matrice[1][1] && @matrice[1][1] == @matrice[2][0] && @matrice[0][2] == "O")
+#     return true
+#   else
+#     return false
+#   end
+# end
+
 
 
 #grafik1("X", "X" , "X" , "X" , "X" , "X" , "X" , "X" , "X" )
