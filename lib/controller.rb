@@ -9,6 +9,7 @@ class Controller
   @played_cases =[]
   end
 
+# DEMANDE DU NOM ET STOCKAGE DANS DES VARIABLES D'INSTANCE DE LA CLASSE PLAYER
   def ask_name
     puts "Quel est le nom du joueur 1 ?"
     name_player0 = gets.chomp
@@ -28,6 +29,7 @@ class Controller
     @view.primary_board
   end
 
+#VERIFICATION SI LE TABLEAU EST REMPLI
   def isfull?
     if @played_cases.length == 9
       return true
@@ -36,6 +38,7 @@ class Controller
     end
   end
 
+#VERIFICATION DES VALEURS DÉJA JOUÉES
   def not_played?(value)
     if @played_cases.include?(value)
       puts "Cette case a déjà été jouée , reessaye avec une autre"
@@ -45,6 +48,7 @@ class Controller
     end
   end
 
+# BLOCAGE DES MAUVAISES ENTRÉES
   def case_authorization?(value)
     possibilities =["A0","A1","A2","B0","B1","B2","C0","C1","C2"]
     if possibilities.include?(value)
@@ -55,11 +59,14 @@ class Controller
     end
   end
 
+# EMPTYGAME NETTOIE LA MATRICE , AFFICHE UN TABLEAU VIERGE ET VIDE L'ARRAY DES  VALEURS DÉJA JOUÉES
   def empty_game
     @view.matrice =  [ [" "," "," "] , [" "," "," "] , [" "," "," "] ]
     @played_cases =[]
+    @view.primary_board
   end
 
+# ALGORYTHME DE JEU JOUEUR PAR JOUEUR
   def play
     state = 0
     empty_game
@@ -113,7 +120,6 @@ class Controller
           end
        end
      end
-
    end
 
 

@@ -4,14 +4,17 @@ class View
 
   attr_accessor :matrice
 
+#LA MATRICE DEFINIT LE TABLEAU DE JEU SOUS FORME D'UN ARRAY
   def initialize
     @matrice = [ [" "," "," "] , [" "," "," "] , [" "," "," "] ]
   end
 
+#AFFICHE LE TABLEAU VIDE
   def primary_board
     launch_board(@matrice)
   end
 
+#FONCTION AFFICHANT LE TABLEAU EN FONCTION DE LA MATRICE
  def launch_board(arr)
    puts `clear`
    puts "     0 1 2  "
@@ -22,6 +25,8 @@ class View
    puts " "
  end
 
+# MODIFIE LA MATRICE EN FONCTION DU PLAYER ET DE LA POSITION DU PION
+#AFFICHE LE TABLEAU UNE FOIS LA MATRICE MODIFIÉE
  def play(player ,position)
     position = position.upcase
     if player == "player0"
@@ -41,8 +46,8 @@ class View
     return launch_board(@matrice)
  end
 
+# CONDITION DE VICTOIRE EN FONCTION DU TOKEN DU PLAYER
 def iswin?(token)
-  # CONDITION DE VICTOIRE EN FONCTION DU TOKEN DU PLAYER
   if (@matrice[0][0] == @matrice[0][1] && @matrice[0][1] == @matrice[0][2] && @matrice[0][0] == token) || (@matrice[1][0] == @matrice[1][1] && @matrice[1][1] == @matrice[1][2] && @matrice[1][0] == token) || (@matrice[2][0] == @matrice[2][1] && @matrice[2][1] == @matrice[2][2] && @matrice[2][0] == token) || (@matrice[0][0] == @matrice[1][0] && @matrice[1][0] == @matrice[2][0] && @matrice[0][0] == token) || (@matrice[0][1] == @matrice[1][1] && @matrice[1][1] == @matrice[2][1] && @matrice[0][1] == token) || (@matrice[0][2] == @matrice[1][2] && @matrice[1][2] == @matrice[2][2] && @matrice[0][2] == token) || (@matrice[0][0] == @matrice[1][1] && @matrice[1][1] == @matrice[2][2] && @matrice[0][0] == token) || (@matrice[0][2] == @matrice[1][1] && @matrice[1][1] == @matrice[2][0] && @matrice[0][2] == token)
     return true
   else
