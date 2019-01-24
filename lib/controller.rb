@@ -17,6 +17,7 @@ class Controller
     player0 =Player.new(name_player0,tok0)
     @player0 = player0
     puts "OK , #{player0.name} jouera avec les #{player0.token} "
+    puts " "
     puts "Quel est le nom du joueur 2 ?"
     name_player1 = gets.chomp
     tok1 = "O"
@@ -41,7 +42,7 @@ class Controller
 #VERIFICATION DES VALEURS DÉJA JOUÉES
   def not_played?(value)
     if @played_cases.include?(value)
-      puts "Cette case a déjà été jouée , reessaye avec une autre"
+      puts "Cette case a déjà été jouée , réessaye avec une autre."
       return false
     else
       return true
@@ -54,7 +55,8 @@ class Controller
     if possibilities.include?(value)
       return true
     else
-      puts "Cette case ne figure pas dans la table de jeu \nTu dois entrer une valeur correcte "
+      puts "Cette case ne figure pas dans la table de jeu. \nTu dois entrer une valeur correcte."
+      puts  "(A0, A1, A2, B0, B1, B2, C0, C1 ou C2)"
       return false
     end
   end
@@ -84,12 +86,13 @@ class Controller
 
          if @view.iswin?(@player0.token)
            puts "#{@player0.name} a gagné."
-           puts "FÉLICITATIONS #{@player0.name}!"
-           puts" "
+           puts "FÉLICITATIONS #{@player0.name}! "
+           puts " "
            @player0.score += 1
            break
          elsif isfull?
-           puts "Match nul !"
+           puts "Match nul ! "
+           puts " "
            break
          else
            state = 1 - state
@@ -108,12 +111,13 @@ class Controller
 
           if @view.iswin?(@player1.token)
             puts "#{@player1.name} a gagné."
-            puts "FÉLICITATIONS #{@player1.name}!"
-            puts" "
+             puts "FÉLICITATIONS #{@player1.name}! "
+             puts " "
             @player1.score += 1
             break
           elsif isfull?
-            puts "Match nul !"
+            puts "Match nul ! "
+            puts " "
             break
           else
            state = 1 - state

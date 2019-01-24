@@ -17,3 +17,5 @@ L'ordre de passage et le choix des tokens (O ou X) sont attribués par défaut
 Alignez 3 tokens pour obtenir la victoire.
 
 Enjoy !
+
+PS : Ce projet a été réalisé en "God Mode" !

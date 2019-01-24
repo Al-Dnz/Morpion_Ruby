@@ -11,17 +11,22 @@ class View
 
 #AFFICHE LE TABLEAU VIDE
   def primary_board
+    puts "C'EST PARTI !"
+    puts " "
     launch_board(@matrice)
   end
 
 #FONCTION AFFICHANT LE TABLEAU EN FONCTION DE LA MATRICE
  def launch_board(arr)
    puts `clear`
-   puts "     0 1 2  "
-   puts ""
-   puts "A   |#{arr[0][0]}|#{arr[0][1]}|#{arr[0][2]}|"
-   puts "B   |#{arr[1][0]}|#{arr[1][1]}|#{arr[1][2]}|"
-   puts "C   |#{arr[2][0]}|#{arr[2][1]}|#{arr[2][2]}|"
+   puts "       0     1     2  "
+   puts "    ___________________                                 "
+   puts "A   |  #{arr[0][0]}  |  #{arr[0][1]}  |  #{arr[0][2]}  |"
+   puts "    |_____|_____|_____|                                 "
+   puts "B   |  #{arr[1][0]}  |  #{arr[1][1]}  |  #{arr[1][2]}  |"
+   puts "    |_____|_____|_____|                                 "
+   puts "C   |  #{arr[2][0]}  |  #{arr[2][1]}  |  #{arr[2][2]}  |"
+   puts "    |_____|_____|_____|                                 "
    puts " "
  end
 

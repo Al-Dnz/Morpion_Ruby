@@ -7,7 +7,11 @@ class Router
   end #ainsi, un "Router.new" lancé par app.rb va créer automatique une instance "@controller"
 
   def perform #rappelle-toi que l'on fait "Router.new.perform" dans app.rb => après initialize, on définit perform.
-    puts "BIENVENUE DANS THE MORPION PROJECT"
+    puts `clear`
+    puts "-----------------------------------"
+    puts "BIENVENUE DANS THE MORPION PROJECT "
+    puts "-----------------------------------"
+    puts " "
     while true
 
       #on affiche le menu
@@ -23,7 +27,6 @@ class Router
         @controller.ask_name
         @controller.create_game
         @controller.play
-        #@controller.empty_game
       when 2
         puts "À bientôt !"
         break #ce "break" permet de sortir de la boucle while. C'est même la seule façon d'en sortir.
