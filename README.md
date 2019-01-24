@@ -18,8 +18,5 @@ Alignez 3 tokens pour obtenir la victoire.
 
 Enjoy !
 
-<<<<<<< HEAD
+
 PS : Ce projet a été réalisé en "God Mode" !
-=======
-PS : ce projet a été réalisé en "God mode" !
->>>>>>> cac5ed3479a4f6e6a4b3cb4bcf3d12767d32a1ab
