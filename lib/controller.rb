@@ -9,9 +9,10 @@ class Controller
   @played_cases =[]
   end
 
-# DEMANDE DU NOM ET STOCKAGE DANS DES VARIABLES D'INSTANCE DE LA CLASSE PLAYER
+# DEFINISSION DES PLAYERS_NAMES + STOCKAGE DANS DES VARIABLES D'INSTANCE DE LA CLASSE PLAYER
   def ask_name
     puts "Quel est le nom du joueur 1 ?"
+    print "> "
     name_player0 = gets.chomp
     tok0 = "X"
     player0 =Player.new(name_player0,tok0)
@@ -19,6 +20,7 @@ class Controller
     puts "OK , #{player0.name} jouera avec les #{player0.token} "
     puts " "
     puts "Quel est le nom du joueur 2 ?"
+    print "> "
     name_player1 = gets.chomp
     tok1 = "O"
     player1 = Player.new(name_player1,tok1)
@@ -27,10 +29,12 @@ class Controller
   end
 
   def create_game
+    empty_game
+    puts "C'EST PARTI !"
     @view.primary_board
   end
 
-#VERIFICATION SI LE TABLEAU EST REMPLI
+#VERIFICATION DE L'ÉTAT DE REMPLISSAGE DE LA TABLE DE JEU
   def isfull?
     if @played_cases.length == 9
       return true
@@ -65,20 +69,22 @@ class Controller
   def empty_game
     @view.matrice =  [ [" "," "," "] , [" "," "," "] , [" "," "," "] ]
     @played_cases =[]
-    @view.primary_board
   end
 
 # ALGORYTHME DE JEU JOUEUR PAR JOUEUR
   def play
     state = 0
-    empty_game
+
+
     while true
       if state == 0
           puts "C'est à #{@player0.name} de jouer (jeton #{@player0.token})"
           puts "Quelle case veux tu cocher #{@player0.name} ?"
+          print "> "
           n = gets.chomp.upcase
 
           until not_played?(n) && case_authorization?(n)
+            print "> "
             n = gets.chomp.upcase
           end
           @played_cases << n
@@ -100,9 +106,11 @@ class Controller
       else
           puts "C'est à #{@player1.name} de jouer (jeton #{@player1.token})"
           puts "Quelle case veux tu cocher #{@player1.name} ?"
+          print "> "
           n = gets.chomp.upcase
 
           until not_played?(n) && case_authorization?(n)
+            print "> "
             n = gets.chomp.upcase
           end
 

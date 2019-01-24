@@ -11,8 +11,6 @@ class View
 
 #AFFICHE LE TABLEAU VIDE
   def primary_board
-    puts "C'EST PARTI !"
-    puts " "
     launch_board(@matrice)
   end
 
